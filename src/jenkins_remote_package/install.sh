@@ -21,3 +21,7 @@ sudo systemctl enable docker;
 sudo systemctl start docker;
 # docker group에 jenkins user를 추가
 sudo usermod -aG docker jenkins;
+sudo usermod -aG docker ec2-user;
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose

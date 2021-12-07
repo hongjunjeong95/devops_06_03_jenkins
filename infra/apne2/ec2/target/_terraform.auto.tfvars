@@ -13,7 +13,7 @@ ami_filters = [
 ]
 
 # EC2
-instance_type = "t3.micro"
+instance_type = "t2.micro"
 key_name      = "dev"
 private_ip    = "10.0.3.61"
 

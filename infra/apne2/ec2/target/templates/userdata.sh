@@ -16,6 +16,7 @@ sudo service codedeploy-agent restart
 EOL
 chmod +x /etc/init.d/codedeploy-start.sh
 
+# ec2-user에게도 docker cli를, 즉 docker socket에 접근할 수 잇는 권한이 필요
 sudo usermod -aG docker ec2-user
 systemctl enable docker
 systemctl start docker
