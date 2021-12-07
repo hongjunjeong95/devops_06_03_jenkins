@@ -19,4 +19,5 @@ sudo systemctl status jenkins;
 sudo yum install -y docker;
 sudo systemctl enable docker;
 sudo systemctl start docker;
+# docker group에 jenkins user를 추가
 sudo usermod -aG docker jenkins;

@@ -12,8 +12,8 @@ module "ec2" {
   iam_instance_profile        = module.iam.iam_instance_profile_name
   associate_public_ip_address = false
 
-  user_data  = data.template_file.userdata.rendered
-  private_ip = var.private_ip
+  # user_data  = data.template_file.userdata.rendered
+  # private_ip = var.private_ip
 
   tags = local.tags
 }

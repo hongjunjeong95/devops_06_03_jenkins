@@ -13,16 +13,22 @@ ami_filters = [
 ]
 
 # EC2
-instance_type = "m4.large"
+# instance_type = "m4.large"
+# key_name      = "dev"
+# private_ip    = "10.0.1.140"
+
+instance_type = "t2.micro"
 key_name      = "dev"
-private_ip    = "10.0.1.140"
 
 # iam
 trusted_role_services = ["ec2.amazonaws.com"]
-custom_role_policy_arns = [
-  "arn:aws:iam::aws:policy/AmazonS3FullAccess",
-  "arn:aws:iam::aws:policy/AWSCodeBuildAdminAccess",
-  "arn:aws:iam::aws:policy/AWSCodeDeployFullAccess"
+# custom_role_policy_arns = [
+#   "arn:aws:iam::aws:policy/AmazonS3FullAccess",
+#   "arn:aws:iam::aws:policy/AWSCodeBuildAdminAccess",
+#   "arn:aws:iam::aws:policy/AWSCodeDeployFullAccess"
+# ]
+custom_role_policy_arns=[
+  "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess",
 ]
 
 # http sg
