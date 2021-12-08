@@ -13,23 +13,23 @@ ami_filters = [
 ]
 
 # EC2
-# instance_type = "m4.large"
-# key_name      = "dev"
-# private_ip    = "10.0.1.140"
-
 instance_type = "t2.micro"
 key_name      = "dev"
+private_ip    = "10.0.1.140"
 
 # iam
+# CodeBuild와 CodeDeploy를 이용할 때
 trusted_role_services = ["ec2.amazonaws.com"]
-# custom_role_policy_arns = [
-#   "arn:aws:iam::aws:policy/AmazonS3FullAccess",
-#   "arn:aws:iam::aws:policy/AWSCodeBuildAdminAccess",
-#   "arn:aws:iam::aws:policy/AWSCodeDeployFullAccess"
-# ]
-custom_role_policy_arns=[
-  "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess",
+custom_role_policy_arns = [
+  "arn:aws:iam::aws:policy/AmazonS3FullAccess",
+  "arn:aws:iam::aws:policy/AWSCodeBuildAdminAccess",
+  "arn:aws:iam::aws:policy/AWSCodeDeployFullAccess"
 ]
+
+# Master jenkins에서 바로 ECR에 push할 때
+# custom_role_policy_arns = [
+#   "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess",
+# ]
 
 # http sg
 http_sg_description      = "HTTP Security group for Bastion EC2 instance"

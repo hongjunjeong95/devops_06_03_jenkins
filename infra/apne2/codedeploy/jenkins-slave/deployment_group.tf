@@ -21,6 +21,8 @@ resource "aws_codedeploy_deployment_group" "this" {
 #    trigger_target_arn = aws_sns_topic.example.arn
 #  }
 
+  # rollback 설정
+  # 배포 실패시 롤백 실행
   auto_rollback_configuration {
     enabled = true
     events  = ["DEPLOYMENT_FAILURE"]

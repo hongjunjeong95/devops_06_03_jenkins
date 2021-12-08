@@ -1,5 +1,5 @@
 env   = "dev"
-name  = "jenkins-slave"
+name  = "jenkins-slave-lewisjeong"
 owner = "dj.kim"
 tags  = {}
 
