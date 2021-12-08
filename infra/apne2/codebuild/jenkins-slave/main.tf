@@ -35,16 +35,16 @@ module "s3_cache" {
   tags = merge(local.tags, { Name = local.bucket_cache_name })
 }
 
-module "s3_artifact" {
-  source = "terraform-aws-modules/s3-bucket/aws"
+# module "s3_artifact" {
+#   source = "terraform-aws-modules/s3-bucket/aws"
 
-  bucket        = local.bucket_artifact_name
-  acl           = "private"
-  force_destroy = false
-  versioning    = { enabled = false }
+#   bucket        = local.bucket_artifact_name
+#   acl           = "private"
+#   force_destroy = false
+#   versioning    = { enabled = false }
 
-  tags = merge(local.tags, { Name = local.bucket_artifact_name })
-}
+#   tags = merge(local.tags, { Name = local.bucket_artifact_name })
+# }
 
 # codebuild
 resource "aws_codebuild_project" "this" {
@@ -83,12 +83,15 @@ resource "aws_codebuild_project" "this" {
   }
   
   artifacts {
-    type = "S3"
-    override_artifact_name = true
-    packaging = "ZIP"
-    location = local.bucket_artifact_name
-    namespace_type = "NONE"
+    type = "NO_ARTIFACTS"
   }
+  # artifacts {
+  #   type = "S3"
+  #   override_artifact_name = true
+  #   packaging = "ZIP"
+  #   location = local.bucket_artifact_name
+  #   namespace_type = "NONE"
+  # }
 
   tags = merge(local.tags, { Name = local.codebuild_name })
 }

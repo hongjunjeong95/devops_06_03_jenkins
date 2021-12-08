@@ -23,9 +23,9 @@ locals {
   trusted_role_services   = var.trusted_role_services
   custom_role_policy_arns = var.custom_role_policy_arns
 
-  codebuild_cache = {
-    type = var.codebuild_cache_type
-    modes = var.codebuild_cache_type == "LOCAL" ? ["LOCAL_DOCKER_LAYER_CACHE", "LOCAL_SOURCE_CACHE"] : null
-    location = var.codebuild_cache_type == "LOCAL" ? null : local.bucket_cache_name
-  }
+  # codebuild_cache = {
+  #   type = var.codebuild_cache_type
+  #   modes = var.codebuild_cache_type == "LOCAL" ? ["LOCAL_DOCKER_LAYER_CACHE", "LOCAL_SOURCE_CACHE"] : null
+  #   location = var.codebuild_cache_type == "LOCAL" ? null : local.bucket_cache_name
+  # }
 }
