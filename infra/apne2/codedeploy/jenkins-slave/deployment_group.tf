@@ -2,7 +2,8 @@ resource "aws_codedeploy_deployment_group" "this" {
   app_name              = aws_codedeploy_app.this.name
   deployment_group_name = local.deployment_group_name
   service_role_arn      = module.iam.iam_role_arn
-#  deployment_config_name = aws_codedeploy_deployment_config.this.id
+  # 여러 개의 target server에 배포할 때 deployment_config_name 주석 해제
+  deployment_config_name = aws_codedeploy_deployment_config.this.id
 
   ec2_tag_set {
     dynamic "ec2_tag_filter" {

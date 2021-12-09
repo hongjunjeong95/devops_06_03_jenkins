@@ -15,6 +15,21 @@ ec2_tag_filter = [
     key   = "Name"
     type  = "KEY_AND_VALUE"
     value = "target-ec2"
+  },
+  {
+    key   = "Name"
+    type  = "KEY_AND_VALUE"
+    value = "target-0-ec2"
+  },
+  {
+    key   = "Name"
+    type  = "KEY_AND_VALUE"
+    value = "target-1-ec2"
+  },
+  {
+    key   = "Name"
+    type  = "KEY_AND_VALUE"
+    value = "target-2-ec2"
   }
 ]
 

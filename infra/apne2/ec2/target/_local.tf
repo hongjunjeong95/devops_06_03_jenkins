@@ -1,6 +1,7 @@
 locals {
   region = var.region
 
+  target_names = ["target-0-ec2", "target-1-ec2", "target-2-ec2"]
   ec2_name     = format("%s-ec2", var.name)
   role_name    = format("%s-role", var.name)
   ssh_sg_name  = format("%s-ssh-sg", var.name)
