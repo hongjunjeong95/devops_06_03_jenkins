@@ -1,11 +1,12 @@
 locals {
   region = var.region
 
-  target_names = ["target-0-ec2", "target-1-ec2", "target-2-ec2"]
   ec2_name     = format("%s-ec2", var.name)
   role_name    = format("%s-role", var.name)
   ssh_sg_name  = format("%s-ssh-sg", var.name)
   http_sg_name = format("%s-http-sg", var.name)
+
+  target_names = [for cnt in range(0, var.target_count) : format("%s-%s-ec2", var.name, cnt)]
 
   tags = merge(var.tags, { Owner = var.owner, Environment = var.env })
 

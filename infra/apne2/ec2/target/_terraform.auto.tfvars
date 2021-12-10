@@ -16,10 +16,9 @@ ami_filters = [
 instance_type = "t2.micro"
 key_name      = "dev"
 
-# Multiple target servers
 target_count = 3
-# private_ips    = ["10.0.3.61"]
-private_ips = ["10.0.1.61","10.0.3.61","10.0.1.62"]
+#private_ips  = ["10.0.1.61"]
+private_ips  = ["10.0.1.61", "10.0.3.61", "10.0.1.62"]
 
 # http sg
 http_sg_description      = "HTTP Security group for Bastion EC2 instance"
@@ -32,4 +31,3 @@ custom_role_policy_arns = [
   "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess",
   "arn:aws:iam::aws:policy/AmazonS3FullAccess",
 ]
-

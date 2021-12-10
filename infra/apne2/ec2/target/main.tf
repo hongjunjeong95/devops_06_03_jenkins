@@ -1,8 +1,7 @@
 module "ec2" {
-  count = length(local.target_names)
+  count  = length(local.target_names)
   source = "terraform-aws-modules/ec2-instance/aws"
 
-  # name = local.ec2_name
   name = local.target_names[count.index]
 
   ami                         = local.ami_id
@@ -15,7 +14,6 @@ module "ec2" {
   associate_public_ip_address = false
 
   user_data  = data.template_file.userdata.rendered
-  # private_ip = var.private_ip
   private_ip = var.private_ips[count.index]
 
   tags = merge(local.tags, { Name = local.target_names[count.index] })
