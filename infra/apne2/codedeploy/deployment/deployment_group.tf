@@ -1,5 +1,5 @@
 resource "aws_codedeploy_deployment_group" "this" {
-  app_name              = aws_codedeploy_app.this.name
+  app_name              = local.app_name
   deployment_group_name = local.deployment_group_name
   service_role_arn      = module.iam.iam_role_arn
   # 여러 개의 target server에 배포할 때 deployment_config_name 주석 해제
